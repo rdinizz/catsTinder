@@ -1,0 +1,23 @@
+platform :android do
+  lane :release do
+  # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
+  gradle(task: 'clean', project_dir: './android/')
+  gradle(
+    task: 'assemble',
+    build_type: 'Release',
+    project_dir: './android/'
+  )
+  end
+  lane :releaseProd do
+    # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
+    # gradle(task: 'clean', project_dir: './android/')
+    increment_version_code(gradle_file_path: './android/app/build.gradle')
+    increment_version_name(gradle_file_path: './android/app/build.gradle')
+    # gradle(
+    #   task: 'assemble',
+    #   build_type: 'Release',
+    #   project_dir: './android/'
+    # )
+    # upload_to_play_store(track: 'beta')
+  end
+end

@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
-const image03 = require('../../assets/images/03.png');
+import { View, StyleSheet, Text } from 'react-native';
+import VersionCheck from 'react-native-version-check';
 
 const ThirdScreen = () => {
   return (
     <View style={styles.container}>
-      <Image source={image03} />
+      <Text>Build number: {VersionCheck.getCurrentVersion()}</Text>
     </View>
   );
 };

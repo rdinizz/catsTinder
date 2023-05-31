@@ -4,7 +4,7 @@ import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import CardsScreen from './CardsScreen';
 import FavoritesScreen from './FavoritesScreen';
 import { StatusBarHeight } from '../util/dimensions';
-const cardsIcon = require('../../assets/images/cardsIcon.png');
+const cardsIcon = require('../../assets/images/black-cat.png');
 const favoritesIcon = require('../../assets/images/favoritesIcon.png');
 
 const HomeScreen = () => {
@@ -24,10 +24,15 @@ const HomeScreen = () => {
           { backgroundColor: tab === 'cards' ? 'white' : 'transparent' },
         ]}>
         <Image
+          resizeMode="contain"
           source={cardsIcon}
-          style={{
-            tintColor: tab === 'cards' ? 'rgb(253,3,125)' : 'rgb(191,191,192)',
-          }}
+          style={[
+            styles.tabIcon,
+            {
+              tintColor:
+                tab === 'cards' ? 'rgb(253,3,125)' : 'rgb(191,191,192)',
+            },
+          ]}
         />
       </TouchableOpacity>
       <TouchableOpacity
@@ -40,10 +45,14 @@ const HomeScreen = () => {
           },
         ]}>
         <Image
-          style={{
-            tintColor:
-              tab === 'favorites' ? 'rgb(253,3,125)' : 'rgb(191,191,192)',
-          }}
+          resizeMode="center"
+          style={[
+            styles.tabIcon,
+            {
+              tintColor:
+                tab === 'favorites' ? 'rgb(253,3,125)' : 'rgb(191,191,192)',
+            },
+          ]}
           source={favoritesIcon}
         />
       </TouchableOpacity>
@@ -84,5 +93,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  tabIcon: {
+    width: 40,
+    height: 24,
   },
 });

@@ -1,23 +1,25 @@
 platform :android do
-  lane :release do
-  # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
-  gradle(task: 'clean', project_dir: './android/')
-  gradle(
-    task: 'assemble',
-    build_type: 'Release',
-    project_dir: './android/'
-  )
+  lane :build do |options|
+    build_task = (options[:bundle] ? "bundle" : "assemble")
+    gradle(task: 'clean', project_dir: './android/')
+    gradle(
+      task: build_task,
+      build_type: 'Release',
+      project_dir: './android/'
+    )
   end
-  lane :releaseProd do
-    # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
-    # gradle(task: 'clean', project_dir: './android/')
+  lane :incrementVersion do |options|
     increment_version_code(gradle_file_path: './android/app/build.gradle')
-    increment_version_name(gradle_file_path: './android/app/build.gradle')
-    # gradle(
-    #   task: 'assemble',
-    #   build_type: 'Release',
-    #   project_dir: './android/'
-    # )
-    # upload_to_play_store(track: 'beta')
+    bumpType = options[:bumpType]
+    increment_version_name(gradle_file_path: './android/app/build.gradle', bump_type: bumpType )
+    commit_android_version_bump(
+      gradle_file_folder:"./android/app"
+    )
+  end
+  lane :releaseUploadPlayStore do |options|
+    bumpType = options[:bumpType]
+    incrementVersion(bumpType: bumpType)
+    build(bundle: true)
+    upload_to_play_store(track: 'beta')
   end
 end

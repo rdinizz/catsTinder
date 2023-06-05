@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 50,
+    zIndex: 1,
     marginTop: StatusBarHeight + 40,
   },
   tab: {

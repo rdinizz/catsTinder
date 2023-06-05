@@ -89,7 +89,5 @@ const styles = StyleSheet.create({
     bottom: 30,
     flexDirection: 'row',
   },
-  swiperContainer: {
-    marginTop: -30,
-  },
+  swiperContainer: {},
 });

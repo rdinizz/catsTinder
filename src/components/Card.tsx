@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     elevation: 5,
     borderRadius: 20,
-    backgroundColor: 'red',
   },
   cardImage: {
     height: height * 0.5,

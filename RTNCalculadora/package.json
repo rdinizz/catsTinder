@@ -1,0 +1,39 @@
+{
+  "name": "rtn-calculadora",
+  "version": "0.0.1",
+  "description": "Add numbers with Turbo Native Modules",
+  "react-native": "js/index",
+  "source": "js/index",
+  "files": [
+    "js",
+    "android",
+    "ios",
+    "rtn-calculadora.podspec",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "keywords": ["react-native", "ios", "android"],
+  "repository": "https://github.com/rdinizz/rtn-calculadora",
+  "author": "Raphael Diniz (https://github.com/rdinizz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdinizz/rtn-calculadora/issues"
+  },
+  "homepage": "https://github.com/rdinizz/rtn-calculadora#readme",
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "RTNCalculadoraSpec",
+    "type": "modules",
+    "jsSrcsDir": "js",
+    "android": {
+      "javaPackageName": "com.rtncalculadora"
+    }
+  }
+}

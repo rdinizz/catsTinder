@@ -16,7 +16,11 @@ export interface CardData {
 const Card = ({ cardData }: { cardData: CardData }) => {
   return (
     <View style={styles.cardContainer}>
-      <Image style={styles.cardImage} source={{ uri: cardData.url }} />
+      <Image
+        resizeMode="cover"
+        style={styles.cardImage}
+        source={{ uri: cardData.url }}
+      />
       {cardData.breeds && cardData.breeds[0] && (
         <View style={styles.breedContainer}>
           <Text style={styles.breedName}>{cardData.breeds[0].name}</Text>
@@ -43,14 +47,16 @@ const styles = StyleSheet.create({
     shadowRadius: 16,
     shadowOpacity: 1,
     elevation: 5,
+    borderRadius: 20,
+    backgroundColor: 'red',
   },
   cardImage: {
     height: height * 0.5,
     width: '100%',
-    paddingHorizontal: 30,
     borderRadius: 20,
   },
   breedContainer: {
+    alignSelf: 'center',
     justifyContent: 'space-around',
     width: 307,
     height: 48,

@@ -6,7 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import SecondScreen from './screens/SecondScreen';
 import ThirdScreen from './screens/ThirdScreen';
 import catPaw from '../assets/images/catPaw.png';
-import messageCircle from '../assets/images/messageCircle.png';
+import calculator from '../assets/images/calculator.png';
 import user from '../assets/images/user.png';
 import TabBarIcon from './components/TabBarIcon';
 const Tab = createBottomTabNavigator();
@@ -34,7 +34,7 @@ function AppNavigation(): JSX.Element {
         options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ size, focused }) => (
-            <TabBarIcon size={size} focused={focused} icon={messageCircle} />
+            <TabBarIcon size={size} focused={focused} icon={calculator} />
           ),
         }}
       />

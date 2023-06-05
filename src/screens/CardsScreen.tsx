@@ -29,6 +29,7 @@ const CardsScreen = () => {
   };
 
   const onPressDislike = () => {
+    console.log('like');
     if (swiperRef.current) {
       swiperRef.current.swipeLeft();
     }
@@ -55,7 +56,7 @@ const CardsScreen = () => {
             showSecondCard
             disableBottomSwipe
             disableTopSwipe
-            stackSize={2}
+            stackSize={5}
             stackSeparation={0}
             containerStyle={styles.swiperContainer}
           />
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   likeDislikeButtons: {
+    zIndex: 1,
     position: 'absolute',
     bottom: 30,
     flexDirection: 'row',

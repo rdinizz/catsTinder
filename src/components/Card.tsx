@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
   cardImage: {
     height: height * 0.5,
     width: '100%',
-    paddingHorizontal: 30,
     borderRadius: 20,
   },
   breedContainer: {
+    alignSelf: 'center',
     justifyContent: 'space-around',
     width: 307,
     height: 48,

@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   likeDislikeButtons: {
+    zIndex: 1,
     position: 'absolute',
     bottom: 30,
     flexDirection: 'row',
